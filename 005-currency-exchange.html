@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Exchange</title>
+</head>
+<body>
+    <input type="number" name="" id="mmbuy" onchange="change(1)">
+   <input type="number" name="" id="usdbuy" onchange="change(2)">
+   <br>
+   <br>
+   <input type="number" name="" id="mmsell" onchange="change(3)">
+   <input type="number" name="" id="usdsell" onchange="change(4)">   
+   <script>
+       var buyusd = document.getElementById('usdbuy');
+       var buymm = document.getElementById('mmbuy');
+       var sellusd = document.getElementById('usdsell');
+       var sellmm = document.getElementById('mmsell');
+       var bmm = 1523;
+       var busd = 1;
+       var smm = 1533;
+       var susd = 1;
+       buymm.value = bmm;
+       buyusd.value = busd;
+       sellmm.value = smm;
+       sellusd.value = susd;
+        function change(arg){
+            switch (arg){
+                case 1 : buyusd.value = buymm.value / bmm;
+                break;
+                case 2 : buymm.value = buyusd.value * bmm;
+                break;
+                case 3 : sellusd.value = sellmm.value / smm;
+                break;
+                case 4 : sellmm.value = sellusd.value * smm;
+            }
+        }
+   </script>
+</body>
+</html>

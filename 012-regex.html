@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Eg</title>
+</head>
+<body>
+    <textarea name="" id="area" cols="30" rows="1"></textarea>
+    <br>
+    <button onclick="regex()">Match</button>
+    <p id="result"></p>
+    <script>
+        var _area = document.getElementById('area');
+        var res = document.getElementById('result');
+        function regex(){
+            var pattern = /[bc]at/g;
+            var s = _area.value;
+            res.innerHTML = s.match(pattern);
+        }
+    </script>
+</body>
+</html>

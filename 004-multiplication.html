@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication</title>
+</head>
+<body>
+    <input type="number" name="" id="number" value="1">
+    <button onclick="calculate(1)">+</button>
+    <button onclick="calculate(2)">-</button>
+    <br>
+    <br>
+    <p id="result"></p>
+    <script>
+        var res = document.getElementById('result');
+        var num = document.getElementById('number');
+        var total = "";
+        calculate();
+        function calculate(arg){
+            switch (arg){
+                case 1 : num.value++;
+                break;
+                case 2 : if(num.value > 1){
+                    num.value--;
+                };
+            }
+            for(let i = 1; i <= 10; i++){
+            total += num.value + " x " + i + " = " + (num.value * i) + '<br>';
+            }
+            res.innerHTML = total;
+            total = "";
+        }
+        
+    </script>
+</body>
+</html>

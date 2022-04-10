@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Writer</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+    <nav class="nav nav-dark bg-black">
+        <span class="navbar-brand mb-0 h1 text-white">Type Writer</span>
+    </nav>
+
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-6">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" name="" id="textInput">
+                    <div class="input-group-append">
+                        <button onclick="setText()" class="btn btn-outline-secondary">Text</button>
+                    </div>
+                </div>
+            </div>
+
+            <div></div>
+
+            <div class="col-6">
+                <div class="card bg-dark">
+                    <div class="card-body text-white">
+                        <p class="justify-content-between" id="res"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var txtInput = document.getElementById("textInput");
+        var result = document.getElementById("res");
+
+        function setText(){
+            result.innerHTML = "";
+            var rs = txtInput.value.split("");
+            var setInt;
+            var counter = 0;
+            setInt = setInterval(function(){
+                if(rs.length == counter && txtInput.value != ""){
+                    clearInterval(setInt);
+                }else{
+                    result.innerHTML += rs[counter];
+                    counter++;
+                }
+            }, 200);
+        }
+
+    </script>
+
+</body>
+</html>

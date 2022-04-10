@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Calculation</title>
+</head>
+<body>
+    <h1>Number Calculation</h1>
+    <input type="number" name="" id="first">
+    <input type="number" name="" id="second">
+    <input type="button" value="+" onclick="calculate(1)">
+    <input type="button" value="-" onclick="calculate(2)">
+    <input type="button" value="*" onclick="calculate(3)">
+    <input type="button" value="/" onclick="calculate(4)">
+    <br>
+    <br>
+    <p id="result"></p>
+    <script>
+        var fir = document.getElementById('first');
+        var sec = document.getElementById('second');
+        var res = document.getElementById('result');
+        var total;
+        function calculate(args){
+            switch (args){
+                case 1: total = Number(fir.value) + Number(sec.value);
+                break;
+                case 2: total = Number(fir.value) - Number(sec.value);
+                break;
+                case 3: total = Number(fir.value) * Number(sec.value);
+                break;
+                case 4: total = Number(fir.value) / Number(sec.value);
+            }
+            res.innerHTML = total;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Firends</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-dark bg-info">
+        <span class="navbar-brand mb-0 h1">Image Slide Show</span>
+    </nav>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-8 mb-2">
+                <img src="1.jpg" alt="" class="img-fluid" id="img_one">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-2">
+                <img src="1.jpg" alt="" class="img-fluid" onclick="setImage(0)">
+            </div>
+            <div class="col-2">
+                <img src="2.jpg" alt="" class="img-fluid" onclick="setImage(1)">
+            </div>
+            <div class="col-2">
+                <img src="3.jpg" alt="" class="img-fluid" onclick="setImage(2)">
+            </div>
+            <div class="col-2">
+                <img src="4.jpg" alt="" class="img-fluid" onclick="setImage(3)">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var imgs = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"];
+         var img_ =document.getElementById("img_one");
+         var count = 0;
+
+         setInterval(function(){
+             if(imgs.length == count){
+                 count = 0;
+             }
+            img_.src = imgs[count++];
+         }, 1000);
+         function setImage(arg){
+             count = arg;
+            img_.src = count;
+         }
+
+    </script>
+
+    <link rel="stylesheet" href="bootstrap.css">
+</body>
+</html>

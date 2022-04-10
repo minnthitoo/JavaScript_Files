@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpharbet</title>
+</head>
+<body>
+    <div id="mm"></div>
+    <p id="result_mm"></p>
+    <div id="eng"></div>
+    <p id="result_eng"></p>
+    <script>
+        var mm_alpha = document.getElementById('mm');
+        var eng_alpha = document.getElementById('eng');
+        var mm_res = document.getElementById('result_mm');
+        var eng_res = document.getElementById('result_eng');
+
+        for(var i = 0x1000; i <= 0x1021; i++){
+            mm_alpha.innerHTML += '<button onclick=\"getmmAlpha(\''+ i +'\')\">' + String.fromCharCode(i) + '</button>';
+        }
+        for(var j = 0x61; j <= 0x7a; j++){
+            eng_alpha.innerHTML += '<button onclick=\"getengAlpha(\'' + j + '\')\">' + String.fromCharCode(j) + '</button>';
+        }
+        function getmmAlpha(arg){
+            mm_res.innerHTML = String.fromCharCode(Number(arg));
+        }
+        function getengAlpha(arg){
+            eng_res.innerHTML = String.fromCharCode(Number(arg));
+        }
+    </script>
+</body>
+</html>

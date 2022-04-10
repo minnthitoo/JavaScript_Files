@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Reaction</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut excepturi quae odit odio. Tempore aliquid delectus possimus. Accusantium adipisci nemo error? Aliquid optio neque nisi pariatur cum nesciunt mollitia enim?</p>
+    <button id="like" onclick="calculate(1)">Like</button>
+    <button id="sad" onclick="calculate(2)">Sad</button>
+    <button id="love" onclick="calculate(3)">Love</button>
+    <script>
+        var lk = document.getElementById('like');
+        var sd = document.getElementById('sad');
+        var le = document.getElementById('love');
+        var lks = 0;
+        var sds = 0;
+        var les = 0;
+        function calculate(args){
+            switch (args){
+                case 1: lk.innerHTML = ++lks + " like";
+                break;
+                case 2: sd.innerHTML = ++sds + " sad";
+                break;
+                case 3: le.innerHTML = ++les + " love";
+            }
+        }
+    </script>
+</body>
+</html>

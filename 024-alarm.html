@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <style>
+        #clockInput {
+            font-family: 'digital-7';
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav nav-dark bg-dark">
+        <span class="navbar-brand mb-0 h1 text-white">Alarm</span>
+    </nav>
+
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-6">
+                <div class="input-group mb-3">
+                    <input type="time" name="" class="form-control" id="clkInput">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" onclick="setAlarm()">Set Alarm</button>
+                    </div>
+                </div>
+            </div>
+            <div></div>
+            <div class="col-6">
+                <div class="card bg-dark">
+                    <div class="card-body text-white">
+                        <h1 id="clockInput" class="text-center display4">00:00:00</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var date;
+        var aDate, diff, inter;
+
+        var clock_ = document.getElementById("clkInput");
+        var clkH1 = document.getElementById("clockInput");
+
+        function setAlarm(){
+            var alarm = clock_.value.split(":");
+            inter = setInterval(function(){
+                date = new Date();
+                aDate = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), alarm[0], alarm[1], 0));
+                diff = new Date(aDate - date);
+                if(diff.getHours() == 13 && diff.getMinutes() == 0 && diff.getSeconds() == 0 && (diff.getHours - 13) > 0){
+                    clearInterval(inter);
+                }
+                clkH1.innerHTML = (diff.getHours() - 13) + ":" + diff.getMinutes() + ":" + diff.getSeconds();
+            }, 1000);
+        }
+
+    </script>
+
+
+</body>
+</html>

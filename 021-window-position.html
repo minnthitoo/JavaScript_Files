@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="x">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni necessitatibus aspernatur quos ad commodi quia earum repudiandae rerum, ab laudantium eveniet temporibus voluptatum nisi corporis fugiat. Quisquam aspernatur tempora vero?</p>
+    <p id="y"></p>
+
+    <script>
+        var xPosition = document.getElementById("x");
+        var yPosition = document.getElementById("y");
+
+        function run(){
+            //xPosition.innerHTML = window.screenX;
+            yPosition.innerHTML = window.screenY;
+        }
+
+        setInterval(run, 100);
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Set attributes</title>
+    <style>
+        .red {
+            background-color: red;
+        }
+        .green {
+            background-color: lightgreen;
+        }
+        .textCol {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading_one">Hello World</h1>
+    <button onclick="chColorRed()">Red</button>
+    <button onclick="chColorGreen()">Green</button>
+    <button onclick="remove()">Remove Attributes</button>
+
+    <script>
+        var heading = document.getElementById("heading_one");
+        function chColorRed(){
+            heading.setAttribute("class", "red textCol");
+        }
+        function chColorGreen(){
+            heading.setAttribute("class", "green textCol");
+        }
+        function remove(){
+            heading.removeAttribute("class");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulation Tables</title>
+</head>
+<body>
+    
+
+    <script>
+        var table = document.createElement("table");
+        table.border = "1";
+        table.width = "100%";
+
+        var tbody = document.createElement("tbody");
+        table.appendChild(tbody);
+
+        var tr1 = document.createElement("tr");
+        tbody.appendChild(tr1);
+
+        var tr2 = document.createElement("tr");
+        tbody.appendChild(tr2);
+
+        var td11 = document.createElement("td");
+        td11.appendChild(document.createTextNode("Cell 1, 1"));
+        tr1.appendChild(td11);
+
+        var td12 = document.createElement("td");
+        td12.appendChild(document.createTextNode("Cell 2, 1"));
+        tr1.appendChild(td12);
+
+        var td21 = document.createElement("td");
+        td21.appendChild(document.createTextNode("Cell 1, 2"));
+        tr2.appendChild(td21);
+
+        var td22 = document.createElement("td");
+        td22.appendChild(document.createTextNode("Cell 2, 2"));
+        tr2.appendChild(td22);
+
+        document.body.appendChild(table);
+
+
+    </script>
+</body>
+</html>
